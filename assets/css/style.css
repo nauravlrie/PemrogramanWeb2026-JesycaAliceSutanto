@@ -57,7 +57,7 @@ section h2 {
 /*Kartu Statistik CSS Grid*/
 main section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 
@@ -176,10 +176,19 @@ td button:first-of-type {
     background-color: #f0ad4e;
     color: #fff;
 }
+td button.btn-detail {
+    background-color: #0288d1;
+    color: #fff;
+}
+td button:nth-of-type(2) {
+    background-color: #f0ad4e;
+    color: #fff;
+}
 td button:last-of-type {
     background-color: #d9534f;
     color: #fff;
 }
+
 /* kelima */
 form label {
     display: block;
