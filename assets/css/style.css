@@ -10,14 +10,14 @@ body {
     line-height: 1.5;
 }
 a {
-    color: #1d5b8a;
+    color: #2e7d32;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
 }
 header {
-    background-color: #1d5b8a;
+    background-color: #2e7d32;
     color: #fff;
     padding: 1rem 1.5rem;
     display: flex;
@@ -52,7 +52,7 @@ section {
 }
 section h2 {
     margin-bottom: 1rem;
-    color: #1d5b8a;
+    color: #2e7d32;
 } 
 /*Kartu Statistik CSS Grid*/
 main section:nth-of-type(2) {
@@ -77,7 +77,7 @@ main section:nth-of-type(2) article h3 {
 main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1d5b8a;
+    color: #2e7d32;
 }
 /*Tabel */
 table {
@@ -92,7 +92,7 @@ th, td {
 }
 
 thead {
-    background-color: #1d5b8a;
+    background-color: #2e7d32;
     color: #fff;
 }
 
@@ -145,7 +145,7 @@ form select {
 }
 
 form button[type="submit"] {
-    background-color: #1d5b8a;
+    background-color: #2e7d32;
     color: #fff;
     border: none;
     padding: 0.6rem 1.5rem;
@@ -163,7 +163,7 @@ table {
     border-collapse: collapse;
 }
 thead {
-    background-color: #1d5b8a;
+    background-color: #2e7d32;
     color: #fff;
 }
 tbody tr:nth-child(even) {
@@ -197,10 +197,16 @@ form select {
     font-size: 1rem;
 }
 form button[type="submit"] {
-    background-color: #1d5b8a;
+    background-color: #2e7d32;
     color: #fff;
     border: none;
     padding: 0.6rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: #7a8794;
+    font-size: 0.9rem;
 }
