@@ -286,3 +286,10 @@ footer {
         max-width: 1200px; /* Diperlebar dari default 1000px */
     }
 }
+pre {
+    overflow-x: auto; /*Mengaktifkan scroll horizontal di layar sempit*/
+    padding: 1rem;
+    background-color: #2b2b2b;
+    color: #f5f6f8;
+    border-radius: 6px;
+}
