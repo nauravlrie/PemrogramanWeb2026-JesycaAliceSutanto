@@ -2,12 +2,15 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIMPUS-Mini | Daftar Buku</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header>
         <h1>SIMPUS-Mini</h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
         <nav>
             <ul>
                 <li><a href="../index.html">Beranda</a></li>
@@ -23,6 +26,7 @@
     <main>
         <section>
             <h2>Daftar Buku</h2>
+            <div class="table-responsive"></div>
             <table border="1">
                 <thead>
                     <tr>
@@ -94,10 +98,10 @@
                             <button type="button">Hapus</button>
                         </td>
                     </tr>
-
-                
+            
                 </tbody>
             </table>
+            </div>
 
         </section>
     </main>

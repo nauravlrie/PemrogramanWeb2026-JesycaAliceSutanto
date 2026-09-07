@@ -122,7 +122,7 @@ td button:last-of-type {
     background-color: #d9534f;
     color: #fff;
 }
-/*Form */
+/*Form*/
 form p {
     margin-bottom: 1rem;
 }
@@ -157,7 +157,7 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #164869;
 }
-/* keempat */
+/*keempat*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -189,7 +189,7 @@ td button:last-of-type {
     color: #fff;
 }
 
-/* kelima */
+/*kelima*/
 form label {
     display: block;
     margin-bottom: 0.35rem;
@@ -218,4 +218,65 @@ footer {
     padding: 1.25rem;
     color: #7a8794;
     font-size: 0.9rem;
+}
+/*Hamburger Menu (checkbox hack)*/
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*Tabel Responsif*/
+.table-responsive {
+    overflow-x: auto;
+}
+
+/*Responsive Breakpoints*/
+
+/*1. Tablet ke bawah (≤ 768px)*/
+@media (max-width: 768px) {
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*2. Mobile (≤ 480px)*/
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
 }
