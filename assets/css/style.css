@@ -1,21 +1,27 @@
+/* ===== 1. RESET & GAYA DASAR ===== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     color: #2b2b2b;
     background-color: #f5f6f8;
     line-height: 1.5;
 }
+
 a {
     color: #2e7d32;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
+/* ===== 2. HEADER & MENU NAVIGASI ===== */
 header {
     background-color: #2e7d32;
     color: #fff;
@@ -25,24 +31,29 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 header h1 {
     font-size: 1.4rem;
 }
+
 header nav ul {
     list-style: none;
     display: flex;
     gap: 1.25rem;
 }
+
 header nav a {
     color: #fff;
     font-weight: 500;
 }
-/*main*/
+
+/* ===== 3. TATA LETAK UTAMA (MAIN & KARTU PUTIH) ===== */
 main {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 0 1.5rem;
 }
+
 section {
     background-color: #fff;
     border-radius: 8px;
@@ -50,14 +61,16 @@ section {
     margin-bottom: 1.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
+
 section h2 {
     margin-bottom: 1rem;
     color: #2e7d32;
-} 
-/*Kartu Statistik CSS Grid*/
+}
+
+/* ===== 4. KARTU STATISTIK (CSS GRID DESKTOP) ===== */
 main section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -79,7 +92,8 @@ main section:nth-of-type(2) article p {
     font-weight: 700;
     color: #2e7d32;
 }
-/*Tabel */
+
+/* ===== 5. TABEL & TOMBOL AKSI ===== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -113,16 +127,25 @@ td button {
     font-size: 0.85rem;
 }
 
-td button:first-of-type {
+/* Tombol Detail (Biru) */
+td button.btn-detail {
+    background-color: #0288d1;
+    color: #fff;
+}
+
+/* Tombol Edit (Kuning) */
+td button:nth-of-type(2) {
     background-color: #f0ad4e;
     color: #fff;
 }
 
+/* Tombol Hapus (Merah) */
 td button:last-of-type {
     background-color: #d9534f;
     color: #fff;
 }
-/*Form*/
+
+/* ===== 6. FORMULIR ===== */
 form p {
     margin-bottom: 1rem;
 }
@@ -155,71 +178,18 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #164869;
-}
-/*keempat*/
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-thead {
-    background-color: #2e7d32;
-    color: #fff;
-}
-tbody tr:nth-child(even) {
-    background-color: #f7f9fb;
-}
-tbody tr:hover {
-    background-color: #eef4fa;
-}
-td button:first-of-type {
-    background-color: #f0ad4e;
-    color: #fff;
-}
-td button.btn-detail {
-    background-color: #0288d1;
-    color: #fff;
-}
-td button:nth-of-type(2) {
-    background-color: #f0ad4e;
-    color: #fff;
-}
-td button:last-of-type {
-    background-color: #d9534f;
-    color: #fff;
+    background-color: #1b5e20;
 }
 
-/*kelima*/
-form label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-weight: 600;
-    color: #444;
-}
-form input,
-form select {
-    width: 100%;
-    max-width: 400px;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid #cdd4da;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-form button[type="submit"] {
-    background-color: #2e7d32;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
+/* ===== 7. FOOTER ===== */
 footer {
     text-align: center;
     padding: 1.25rem;
     color: #7a8794;
     font-size: 0.9rem;
 }
-/*Hamburger Menu (checkbox hack)*/
+
+/* ===== 8. DASAR HAMBURGER & TABEL RESPONSIF ===== */
 .nav-toggle {
     display: none;
 }
@@ -231,21 +201,28 @@ footer {
     cursor: pointer;
 }
 
-/*Tabel Responsif*/
 .table-responsive {
     overflow-x: auto;
 }
 
-/*Responsive Breakpoints*/
+pre {
+    overflow-x: auto;
+    padding: 1rem;
+    background-color: #2b2b2b;
+    color: #f5f6f8;
+    border-radius: 6px;
+}
 
-/*1. Tablet ke bawah (≤ 768px)*/
-@media (max-width: 900px) {
+/* ===== 9. RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet (≤ 768px atau 900px) */
+@media (max-width: 768px) {
     main section:nth-of-type(2) {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/*2. Mobile (≤ 480px)*/
+/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
     header {
         position: relative;
@@ -280,16 +257,10 @@ footer {
         max-width: 100%;
     }
 }
-/*Layar Monitor Sangat Lebar*/
+
+/* Layar Monitor Sangat Lebar (≥ 1400px) */
 @media (min-width: 1400px) {
     main {
-        max-width: 1200px; /* Diperlebar dari default 1000px */
+        max-width: 1200px;
     }
-}
-pre {
-    overflow-x: auto; /*Mengaktifkan scroll horizontal di layar sempit*/
-    padding: 1rem;
-    background-color: #2b2b2b;
-    color: #f5f6f8;
-    border-radius: 6px;
 }
