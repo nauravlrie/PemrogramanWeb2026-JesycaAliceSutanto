@@ -88,8 +88,44 @@
 |                                                                  |
 +------------------------------------------------------------------+
 
-## Konsistensi dengan Desain yang Sudah Berjalan
-- Warna aksen, tipografi navbar, dan gaya tabel/kartu mengikuti `assets/css/style.css` yang sudah dibangun sejak Jobsheet 2-3.
-- Navbar akan ditambah menu **Peminjaman** dan indikator status login (nama petugas / tombol Logout) mulai implementasi di Jobsheet 10.
-- Edge case yang perlu ditangani saat implementasi: buku stok habis tidak boleh dipilih di form peminjaman; anggota dengan tunggakan terlambat divalidasi di Jobsheet 12 (tugas mandiri).
+## Wireframe: Registrasi Mandiri Anggota Baru
++----------------------------------------------------+
+|                    SIMPUS-Mini                     |
++----------------------------------------------------+
+|                                                    |
+|           [ Registrasi Anggota Baru ]              |
+|                                                    |
+|   Nama Lengkap   : [__________________________]    |
+|   NIM / No. Ident: [__________________________]    |
+|   Email          : [__________________________]    |
+|   Program Studi  : [ dropdown pilih prodi   v ]    |
+|   No. WhatsApp   : [__________________________]    |
+|   Password       : [__________________________]    |
+|   Konfirmasi Pwd : [__________________________]    |
+|                                                    |
+|              [   Daftar Sekarang   ]               |
+|                                                    |
+|        Sudah punya akun? [ Login Petugas ]         |
+|                                                    |
++----------------------------------------------------+
+
+## Wireframe: Pemantauan Buku Terlambat & Denda
++---------------------------------------------------------------------------------+
+| SIMPUS-Mini      Beranda | Buku | Anggota | Peminjaman | Terlambat     (Petugas) Logout |
++---------------------------------------------------------------------------------+
+|                                                                                 |
+|   Daftar Peminjaman Melewati Jatuh Tempo (Terlambat)                            |
+|   ---------------------------------------------------------------------------   |
+|   Pencarian: [ Nama anggota / Judul buku ____________________ ] [ Cari ]        |
+|                                                                                 |
+|   Anggota      | Judul Buku       | Jatuh Tempo | Terlambat | Denda   | Aksi    |
+|   -------------+------------------+-------------+-----------+---------+---------|
+|   Ahmad Dani   | Clean Code       | 01/09/2026  | 7 Hari    | Rp7.000 | [Notif] |
+|   Rina Wijaya  | Sistem Basis Data| 03/09/2026  | 5 Hari    | Rp5.000 | [Notif] |
+|                                                                                 |
+|   Ringkasan: 2 Transaksi Terlambat | Total Estimasi Denda: Rp12.000             |
+|                                                                                 |
++---------------------------------------------------------------------------------+
+
+
 
