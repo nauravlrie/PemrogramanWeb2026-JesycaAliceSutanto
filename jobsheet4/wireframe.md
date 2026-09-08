@@ -110,22 +110,22 @@
 +----------------------------------------------------+
 
 ## Wireframe: Pemantauan Buku Terlambat & Denda
-+---------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
 | SIMPUS-Mini      Beranda | Buku | Anggota | Peminjaman | Terlambat     (Petugas) Logout |
-+---------------------------------------------------------------------------------+
-|                                                                                 |
-|   Daftar Peminjaman Melewati Jatuh Tempo (Terlambat)                            |
-|   ---------------------------------------------------------------------------   |
-|   Pencarian: [ Nama anggota / Judul buku ____________________ ] [ Cari ]        |
-|                                                                                 |
-|   Anggota      | Judul Buku       | Jatuh Tempo | Terlambat | Denda   | Aksi    |
-|   -------------+------------------+-------------+-----------+---------+---------|
-|   Ahmad Dani   | Clean Code       | 01/09/2026  | 7 Hari    | Rp7.000 | [Notif] |
-|   Rina Wijaya  | Sistem Basis Data| 03/09/2026  | 5 Hari    | Rp5.000 | [Notif] |
-|                                                                                 |
-|   Ringkasan: 2 Transaksi Terlambat | Total Estimasi Denda: Rp12.000             |
-|                                                                                 |
-+---------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+|                                                                                         |
+|   Daftar Peminjaman Melewati Jatuh Tempo (Terlambat)                                    |
+|   ---------------------------------------------------------------------------           |
+|   Pencarian: [ Nama anggota / Judul buku ____________________ ] [ Cari ]                |
+|                                                                                         |
+|   Anggota      | Judul Buku       | Jatuh Tempo | Terlambat | Denda   | Aksi            | 
+|   -------------+------------------+-------------+-----------+---------+---------        |
+|   Ahmad Dani   | Clean Code       | 01/09/2026  | 7 Hari    | Rp7.000 | [Notif]         |
+|   Rina Wijaya  | Sistem Basis Data| 03/09/2026  | 5 Hari    | Rp5.000 | [Notif]         |
+|                                                                                         |
+|   Ringkasan: 2 Transaksi Terlambat | Total Estimasi Denda: Rp12.000                     |
+|                                                                                         |
++-----------------------------------------------------------------------------------------+
 
 
 
