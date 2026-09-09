@@ -2,62 +2,72 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIMPUS-Mini | Beranda</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+    <! header dan menu navigasi utama>
     <header>
-        <h1>SIMPUS-Mini</h1>
-        <p><em>Sistem Informasi Perpustakaan Digital</em></p>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
-        <nav>
-            <ul>
-                <li><a href="index.html"><strong>Beranda</strong></a></li>
-                <li><a href="buku/list.html">Daftar Buku</a></li>
-                <li><a href="buku/tambah.html">Tambah Buku</a></li>
-                <li><a href="anggota/list.html">Daftar Anggota</a></li>
-                <li><a href="anggota/tambah.html">Tambah Anggota</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>SIMPUS-Mini</h1>
+    <!-- Checkbox tetap berada sebelum <nav> -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="buku/list.html">Daftar Buku</a></li>
+            <li><a href="buku/tambah.html">Tambah Buku</a></li>
+            <li><a href="anggota/list.html">Daftar Anggota</a></li>
+            <li><a href="anggota/tambah.html">Tambah Anggota</a></li>
+        </ul>
+    </nav>
+    <!-- Label dipindahkan ke urutan terakhir setelah <nav> -->
+    <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+</header>
 
-    <hr>
-
+    <!konten>
     <main>
         <section>
             <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
-            <p>Aplikasi digital sederhana untuk mengelola peminjaman dan pencarian koleksi buku.</p>
+            <p>Aplikasi digital untuk mengelola peminjaman, pencarian koleksi buku, serta pencatatan data anggota perpustakaan secara rapi.</p>
+            
         </section>
+
+
         <section>
             <h2>Ringkasan Data Perpustakaan</h2>
-            <article>
-                <h3>Total Koleksi Buku: 100 Judul</h3>
-                <p>Terdiri dari kategori: <strong>Fiksi, Non-Fiksi, Referensi</strong>.</p>
-            </article>
-            <article>
-                <h3>Total Anggota Aktif: 50 Orang</h3>
-                <p>Mencakup mahasiswa, dosen, dan staf yang terdaftar.</p>
-            </article>
-            <article>
-                <h3>Buku Sedang Dipinjam: 18 Buku</h3>
-                <p>Status peminjaman aktif tercatat dalam sistem.</p>
-            </article>
-        </section>
-        <section>
-            <h2>Jam Operasional Layanan</h2>
-            <ul>
-                <li><strong>Senin - Kamis:</strong> 08.00 - 16.00 WIB</li>
-                <li><strong>Jumat:</strong> 08.00 - 15.30 WIB</li>
-                <li><strong>Sabtu & Minggu:</strong> Libur / Layanan Mandiri</li>
-            </ul>
-        </section>
-    </main>
 
+            <article>
+                <h3>Total Buku</h3>
+                <p>100</p>
+            </article>
+
+            <article>
+                <h3>Total Anggota</h3>
+                <p>50</p>
+            </article>
+
+            <article>
+                <h3>Buku Sedang Dipinjam</h3>
+                <p>18</p>
+            </article>
+            
+            <article>
+                <h3>Buku Terlambat</h3>
+                <p>15</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Terminal Perintah Git</h2>
+            <pre><code>https://github.com/nauravlrie/PemrogramanWeb2026-JesycaAliceSutanto</code></pre>
+        </section>
+
+    </main>
     <hr>
 
+    <! footer>
     <footer>
         <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
     </footer>

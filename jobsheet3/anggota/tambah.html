@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIMPUS-Mini | Tambah Anggota</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-
+    
     <header>
         <h1>SIMPUS-Mini</h1>
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -18,41 +18,50 @@
                 <li><a href="../buku/list.html">Daftar Buku</a></li>
                 <li><a href="../buku/tambah.html">Tambah Buku</a></li>
                 <li><a href="list.html">Daftar Anggota</a></li>
-                <li><a href="tambah.html"><strong>Tambah Anggota</strong></a></li>
+                <li><a href="tambah.html">Tambah Anggota</a></li>
             </ul>
         </nav>
     </header>
 
-    <hr>
-
+    <!konten>
     <main>
         <section>
-            <h2>Tambah Anggota Baru</h2>
-            <form action="list.html" method="GET">
+            <h2>Tambah Anggota</h2>
+            <p>Silahkan lengkapi formulir pendaftaran anggota perpustakaan di bawah ini.</p>
+
+            <form>
                 <p>
-                    <label for="nim">NIM / ID Anggota:</label><br>
-                    <input type="text" id="nim" name="nim" required>
+                    <label for="nama">Nama</label><br>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
                 </p>
                 <p>
-                    <label for="nama">Nama Lengkap:</label><br>
-                    <input type="text" id="nama" name="nama" required>
+                    <label for="no_anggota">No. Anggota</label><br>
+                    <input type="text" id="no_anggota" name="no_anggota" placeholder="Masukkan No. Anggota" required>
                 </p>
                 <p>
-                    <label for="prodi">Program Studi:</label><br>
-                    <input type="text" id="prodi" name="prodi" required>
+                    <label for="alamat">Alamat</label><br>
+                    <input type="text" id="alamat" name="alamat" placeholder="Masukkan Alamat">
                 </p>
                 <p>
-                    <button type="submit">Simpan Anggota</button>
+                    <label for="no_hp">No. HP</label><br>
+                    <input type="text" id="no_hp" name="no_hp" placeholder="Masukkan No. HP">
                 </p>
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Masukkan Email">
+                </p>
+                <p>
+                    <button type="submit">Simpan</button>
+                </p>
+                
             </form>
+
         </section>
     </main>
 
-    <hr>
-
+    <!footer>
     <footer>
         <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
     </footer>
-
 </body>
 </html>

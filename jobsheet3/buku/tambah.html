@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIMPUS-Mini | Tambah Buku</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -16,55 +16,58 @@
             <ul>
                 <li><a href="../index.html">Beranda</a></li>
                 <li><a href="list.html">Daftar Buku</a></li>
-                <li><a href="tambah.html"><strong>Tambah Buku</strong></a></li>
+                <li><a href="tambah.html">Tambah Buku</a></li>
                 <li><a href="../anggota/list.html">Daftar Anggota</a></li>
-                <li><a href="../anggota/tambah.html">Tambah Anggota</a>
+                <li><a href="../anggota/tambah.html">Tambah Anggota</a></li>
             </ul>
         </nav>
     </header>
 
     <hr>
 
+    <! konten>
     <main>
         <section>
-            <h2>Tambah Buku Baru</h2>
-            <form action="list.html" method="GET">
+            <h2>Tambah Buku</h2>
+            <form>
                 <p>
-                    <label for="judul">Judul Buku:</label><br>
-                    <input type="text" id="judul" name="judul" required>
+                    <label for="judul">Judul</label><br>
+                    <input type="text" id="judul" name="judul" placeholder= "Masukkan Judul Buku" required>
                 </p>
                 <p>
-                    <label for="pengarang">Pengarang:</label><br>
-                    <input type="text" id="pengarang" name="pengarang" required>
+                    <label for="pengarang">Pengarang</label><br>
+                    <input type="text" id="pengarang" name="pengarang" placeholder= "Masukkan Nama Pengarang" required>
                 </p>
                 <p>
-                    <label for="tahun">Tahun Terbit:</label><br>
-                    <input type="number" id="tahun" name="tahun" min="1900" max="2026" required>
+                    <label for="tahun">Tahun Terbit</label><br>
+                    <input type="number" id="tahun" name="tahun" min="1900" max="2026"  required>
                 </p>
                 <p>
-                    <label for="kategori">Kategori:</label><br>
+                    <label for="isbn">ISBN</label><br>
+                    <input type="text" id="isbn" name="isbn" placeholder= "Masukkan ISBN">
+                </p>
+                <p>
+                    <label for="stok">Stok</label><br>
+                    <input type="number" id="stok" name="stok" min="0" placeholder="Masukkan Stok" required>
+                </p>
+                <p>
+                    <label for="kategori">Kategori</label><br>
                     <select id="kategori" name="kategori">
-                        <option value="Fiksi">Fiksi</option>
-                        <option value="Non-Fiksi">Non-Fiksi</option>
-                        <option value="Referensi">Referensi</option>
+                        <option value="fiksi">Fiksi</option>
+                        <option value="non-fiksi">Non-Fiksi</option>
+                        <option value="referensi">Referensi</option>
                     </select>
                 </p>
                 <p>
-                    <label for="stok">Jumlah Stok:</label><br>
-                    <input type="number" id="stok" name="stok" min="1" required>
-                </p>
-                <p>
-                    <button type="submit">Simpan Buku</button>
+                    <button type="submit">Simpan</button>
                 </p>
             </form>
         </section>
     </main>
 
-    <hr>
-
+    <!footer>
     <footer>
         <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
     </footer>
-
 </body>
 </html>
