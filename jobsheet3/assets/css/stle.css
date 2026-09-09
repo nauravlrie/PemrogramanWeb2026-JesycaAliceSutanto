@@ -196,3 +196,9 @@ button:hover, .btn:hover {
 .btn-danger:hover {
     background-color: #c9302c;
 }
+/* ===== 8. PEMBUNGKUS TABEL RESPONSIF ===== */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
