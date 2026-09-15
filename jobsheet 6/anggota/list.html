@@ -29,42 +29,24 @@
             <div class="search-box">
                 <input type="search" id="search-input" placeholder="Cari anggota berdasarkan nama / NIM...">
             </div>
+            <p id="loading-indicator" style="text-align: center; color: #555; padding: 10px;">
+                Memuat data anggota...
+            </p>
 
             <div class="table-responsive">
                 <table border="1">
                     <thead>
                         <tr>
-                            <th>NIM</th>
-                            <th>Nama</th>
-                            <th>Program Studi</th>
-                            <th>Email</th>
-                            <th>Aksi</th>
+                             <th>No Anggota</th>
+                             <th>Nama</th>
+                             <th>Alamat</th>
+                             <th>No HP</th>
+                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>24410706001</td>
-                            <td>Siti Aminah</td>
-                            <td>D4 Sistem Informasi Bisnis</td>
-                            <td>siti@example.com</td>
-                            <td>
-                                <button type="button" class="btn-detail">Detail</button>
-                                <button type="button">Edit</button>
-                                <button type="button" class="btn-hapus">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>24410706002</td>
-                            <td>Budi Santoso</td>
-                            <td>D4 Teknik Informatika</td>
-                            <td>budi@example.com</td>
-                            <td>
-                                <button type="button" class="btn-detail">Detail</button>
-                                <button type="button">Edit</button>
-                                <button type="button" class="btn-hapus">Hapus</button>
-                            </td>
-                        </tr>
+                    <tbody id="tabel-anggota-body">
                     </tbody>
+
                 </table>
             </div>
         </section>
@@ -75,5 +57,6 @@
     </footer>
 
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/anggota.js"></script>
 </body>
 </html>
