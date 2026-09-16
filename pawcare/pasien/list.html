@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pasien - PawCare Mini</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <span class="header-tagline">Sistem Informasi Manajemen</span>
+            <h1>PawCare Mini</h1>
+        </div>
+        <div class="header-meta">
+            <span class="meta-label">Jam Operasional</span>
+            <span class="meta-value">Senin - Minggu: 08.00 - 21.00 WIB</span>
+        </div>
+    </header>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <div class="menu">
+            <a href="../index.html">Beranda</a>
+            <a href="list.html">Data Pasien</a>
+            <a href="tambah.html">Tambah Pasien</a>
+            <a href="../rekam_medis/list.html">Rekam Medis</a>
+            <a href="../rekam_medis/tambah.html">Tambah Rekam Medis</a>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <article>
+                <h2>Daftar Pasien Hewan</h2>
+                <p>Data seluruh hewan peliharaan yang terdaftar di klinik PawCare Mini.</p>
+                
+                <div style="margin-bottom: 16px;">
+                    <a href="tambah.html" class="btn btn-primary">+ Tambah Pasien Baru</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No Pasien</th>
+                                <th>Nama Hewan</th>
+                                <th>Spesies</th>
+                                <th>Ras</th>
+                                <th>Nama Pemilik</th>
+                                <th>No HP</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>PAS-001</strong></td>
+                                <td>Mochi</td>
+                                <td><span class="badge-pill badge-strawberry">Kucing</span></td>
+                                <td>British Shorthair</td>
+                                <td>Siti Aminah</td>
+                                <td>0812-3456-7890</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>PAS-002</strong></td>
+                                <td>Milo</td>
+                                <td><span class="badge-pill badge-peach">Anjing</span></td>
+                                <td>Golden Retriever</td>
+                                <td>Budi Santoso</td>
+                                <td>0813-9876-5432</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>PAS-003</strong></td>
+                                <td>Luna</td>
+                                <td><span class="badge-pill badge-strawberry">Kucing</span></td>
+                                <td>Persia Medium</td>
+                                <td>Dewi Lestari</td>
+                                <td>0814-1122-3344</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>PAS-004</strong></td>
+                                <td>Chiko</td>
+                                <td><span class="badge-pill badge-vanilla">Kelinci</span></td>
+                                <td>Holland Lop</td>
+                                <td>Rizky Firmansyah</td>
+                                <td>0815-5566-7788</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PawCare Mini - Sistem Informasi Klinik Hewan</p>
+    </footer>
+</body>
+</html>

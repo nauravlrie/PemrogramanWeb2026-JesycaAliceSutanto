@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Rekam Medis - PawCare Mini</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <span class="header-tagline">Sistem Informasi Manajemen</span>
+            <h1>PawCare Mini</h1>
+        </div>
+        <div class="header-meta">
+            <span class="meta-label">Jam Operasional</span>
+            <span class="meta-value">Senin - Minggu: 08.00 - 21.00 WIB</span>
+        </div>
+    </header>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <div class="menu">
+            <a href="../index.html">Beranda</a>
+            <a href="../pasien/list.html">Data Pasien</a>
+            <a href="../pasien/tambah.html">Tambah Pasien</a>
+            <a href="list.html">Rekam Medis</a>
+            <a href="tambah.html">Tambah Rekam Medis</a>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <article>
+                <h2>Formulir Tambah Rekam Medis</h2>
+                <p>Catat hasil diagnosa dan tindakan medis pasien.</p>
+
+                <form action="list.html" method="GET">
+                    <div class="form-group">
+                        <label for="pasien">Pilih Pasien *</label>
+                        <select id="pasien" name="pasien" class="form-control" required>
+                            <option value="">-- Pilih Pasien --</option>
+                            <option value="Mochi">PAS-001 - Mochi (Kucing)</option>
+                            <option value="Milo">PAS-002 - Milo (Anjing)</option>
+                            <option value="Luna">PAS-003 - Luna (Kucing)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Pemeriksaan *</label>
+                        <input type="date" id="tanggal" name="tanggal" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dokter">Dokter Pemeriksa *</label>
+                        <select id="dokter" name="dokter" class="form-control" required>
+                            <option value="">-- Pilih Dokter --</option>
+                            <option value="drh. Ratna Sari">drh. Ratna Sari</option>
+                            <option value="drh. Hendra Gunawan">drh. Hendra Gunawan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="diagnosa">Diagnosa & Tindakan *</label>
+                        <textarea id="diagnosa" name="diagnosa" class="form-control" rows="3" placeholder="Hasil diagnosa dan tindakan dokter..." required></textarea>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary">Simpan Rekam Medis</button>
+                        <a href="list.html" class="btn btn-secondary">Batal</a>
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PawCare Mini - Sistem Informasi Klinik Hewan</p>
+    </footer>
+</body>
+</html>

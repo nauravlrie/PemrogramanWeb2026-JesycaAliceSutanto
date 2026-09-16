@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekam Medis - PawCare Mini</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <span class="header-tagline">Sistem Informasi Manajemen</span>
+            <h1>PawCare Mini</h1>
+        </div>
+        <div class="header-meta">
+            <span class="meta-label">Jam Operasional</span>
+            <span class="meta-value">Senin - Minggu: 08.00 - 21.00 WIB</span>
+        </div>
+    </header>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <div class="menu">
+            <a href="../index.html">Beranda</a>
+            <a href="../pasien/list.html">Data Pasien</a>
+            <a href="../pasien/tambah.html">Tambah Pasien</a>
+            <a href="list.html">Rekam Medis</a>
+            <a href="tambah.html">Tambah Rekam Medis</a>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <article>
+                <h2>Daftar Rekam Medis</h2>
+                <p>Catatan riwayat pemeriksaan dan tindakan medis seluruh pasien klinik.</p>
+                
+                <div style="margin-bottom: 16px;">
+                    <a href="tambah.html" class="btn btn-primary">+ Tambah Rekam Medis</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No RM</th>
+                                <th>Nama Pasien</th>
+                                <th>Tanggal</th>
+                                <th>Diagnosa & Tindakan</th>
+                                <th>Dokter Pemeriksa</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>RM-001</strong></td>
+                                <td>Mochi <span class="badge-pill badge-strawberry">Kucing</span></td>
+                                <td>15 Sep 2026</td>
+                                <td>Vaksinasi Feline Tricat</td>
+                                <td>drh. Ratna Sari</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>RM-002</strong></td>
+                                <td>Milo <span class="badge-pill badge-peach">Anjing</span></td>
+                                <td>16 Sep 2026</td>
+                                <td>Observasi Rawat Inap & Infus</td>
+                                <td>drh. Hendra Gunawan</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>RM-003</strong></td>
+                                <td>Luna <span class="badge-pill badge-strawberry">Kucing</span></td>
+                                <td>14 Sep 2026</td>
+                                <td>Pembersihan Karang Gigi</td>
+                                <td>drh. Ratna Sari</td>
+                                <td>
+                                    <a href="#" class="btn-action-edit">Edit</a>
+                                    <a href="#" class="btn-action-delete">Hapus</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PawCare Mini - Sistem Informasi Klinik Hewan</p>
+    </footer>
+</body>
+</html>
