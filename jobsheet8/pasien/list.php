@@ -1,17 +1,20 @@
 <?php
 $page_title = "Data Pasien";
 include __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
 
-$daftarPasien = $_SESSION['pasien'] ?? [];
+// Mengambil data  dri postgres
+$stmt = $pdo->query("SELECT * FROM pasien ORDER BY id ASC");
+$daftarPasien = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
         <section>
             <article>
                 <h2>Daftar Pasien Hewan</h2>
-                <p>Data seluruh hewan peliharaan yang terdaftar di klinik PawCare Mini.</p>
+                <p>Data seluruh hewan peliharaan yang terdaftar permanen di database PostgreSQL PawCare Mini.</p>
 
                 <?php if ($flash): ?>
                     <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
@@ -40,7 +43,7 @@ $daftarPasien = $_SESSION['pasien'] ?? [];
                             <?php if (empty($daftarPasien)): ?>
                                 <tr>
                                     <td colspan="7" style="text-align: center; color: #846F65; padding: 24px;">
-                                        Belum ada data pasien. Silakan klik tombol <strong>+ Tambah Pasien Baru</strong> di atas.
+                                        Belum ada data pasien di database. Silakan klik tombol <strong>+ Tambah Pasien Baru</strong> di atas.
                                     </td>
                                 </tr>
                             <?php else: ?>
