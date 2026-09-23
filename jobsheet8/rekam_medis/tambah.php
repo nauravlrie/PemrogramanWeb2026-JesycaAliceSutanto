@@ -1,17 +1,18 @@
 <?php
 $page_title = "Tambah Rekam Medis";
 include __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
 
-$daftarPasien = $_SESSION['pasien'] ?? [];
+$daftarPasien = $pdo->query("SELECT * FROM pasien ORDER BY id ASC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
         <section>
             <article>
                 <h2>Formulir Tambah Rekam Medis</h2>
-                <p>Catat hasil diagnosa dan tindakan medis pasien anabul.</p>
+                <p>Catat hasil diagnosa dan tindakan medis pasien anabul ke dalam database.</p>
 
                 <?php if ($flash): ?>
                     <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
@@ -25,9 +26,7 @@ $daftarPasien = $_SESSION['pasien'] ?? [];
                         <select id="pasien" name="pasien" class="form-control" required>
                             <option value="">-- Pilih Pasien --</option>
                             <?php if (empty($daftarPasien)): ?>
-                                <option value="Mochi (Kucing)">PAS-001 - Mochi (Kucing)</option>
-                                <option value="Milo (Anjing)">PAS-002 - Milo (Anjing)</option>
-                                <option value="Luna (Kucing)">PAS-003 - Luna (Kucing)</option>
+                                <option value="" disabled>Belum ada data pasien di database</option>
                             <?php else: ?>
                                 <?php foreach ($daftarPasien as $p): ?>
                                     <option value="<?php echo htmlspecialchars($p['nama_hewan'] . ' (' . $p['spesies'] . ')'); ?>">
