@@ -1,17 +1,20 @@
 <?php
 $page_title = "Rekam Medis";
 include __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
 
-$daftarRM = $_SESSION['rekam_medis'] ?? [];
+
+$stmt = $pdo->query("SELECT * FROM rekam_medis ORDER BY id ASC");
+$daftarRM = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
         <section>
             <article>
                 <h2>Daftar Rekam Medis</h2>
-                <p>Catatan riwayat pemeriksaan dan tindakan medis seluruh pasien klinik PawCare Mini.</p>
+                <p>Catatan riwayat pemeriksaan dan tindakan medis seluruh pasien klinik PawCare Mini dari database.</p>
 
                 <?php if ($flash): ?>
                     <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
@@ -39,7 +42,7 @@ $daftarRM = $_SESSION['rekam_medis'] ?? [];
                             <?php if (empty($daftarRM)): ?>
                                 <tr>
                                     <td colspan="6" style="text-align: center; color: #846F65; padding: 24px;">
-                                        Belum ada riwayat rekam medis. Silakan klik tombol <strong>+ Tambah Rekam Medis</strong> di atas.
+                                        Belum ada riwayat rekam medis di database. Silakan klik tombol <strong>+ Tambah Rekam Medis</strong> di atas.
                                     </td>
                                 </tr>
                             <?php else: ?>
