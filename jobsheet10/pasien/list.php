@@ -60,7 +60,10 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
 
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
                     <div>
-                        <a href="tambah.php" class="btn btn-primary">+ Tambah Pasien Baru</a>
+                        <!-- Tombol Tambah hanya tampil jika petugas sudah login -->
+                        <?php if ($sudahLogin): ?>
+                            <a href="tambah.php" class="btn btn-primary">+ Tambah Pasien Baru</a>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Formulir Pencarian Server-Side -->
@@ -85,17 +88,20 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <th>Ras</th>
                                 <th>Nama Pemilik</th>
                                 <th>No HP</th>
-                                <th style="text-align: center;">Aksi</th>
+                                <!-- Kolom Aksi hanya tampil jika petugas sudah login -->
+                                <?php if ($sudahLogin): ?>
+                                    <th style="text-align: center;">Aksi</th>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php if (empty($daftarPasien)): ?>
                                 <tr>
-                                    <td colspan="7" style="text-align: center; color: #846F65; padding: 24px;">
+                                    <td colspan="<?php echo $sudahLogin ? 7 : 6; ?>" style="text-align: center; color: #846F65; padding: 24px;">
                                         <?php if ($keyword !== ''): ?>
                                             Tidak ditemukan data pasien dengan kata kunci "<strong><?php echo htmlspecialchars($keyword); ?></strong>".
                                         <?php else: ?>
-                                            Belum ada data pasien di database. Silakan klik tombol <strong>+ Tambah Pasien Baru</strong> di atas.
+                                            Belum ada data pasien di database.
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -116,13 +122,16 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                         <td><?php echo htmlspecialchars($p['ras']); ?></td>
                                         <td><?php echo htmlspecialchars($p['nama_pemilik']); ?></td>
                                         <td><?php echo htmlspecialchars($p['no_hp']); ?></td>
-                                        <td style="text-align: center; white-space: nowrap;">
-                                            <a href="edit.php?id=<?php echo htmlspecialchars($p['id']); ?>" class="btn-action-edit">Edit</a>
-                                            <form class="form-hapus" method="POST" action="hapus.php" style="display: inline-block;">
-                                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($p['id']); ?>">
-                                                <button type="submit" class="btn-action-delete" style="border: none; cursor: pointer;">Hapus</button>
-                                            </form>
-                                        </td>
+                                        <!-- Tombol Edit dan Hapus hanya tampil jika petugas sudah login -->
+                                        <?php if ($sudahLogin): ?>
+                                            <td style="text-align: center; white-space: nowrap;">
+                                                <a href="edit.php?id=<?php echo htmlspecialchars($p['id']); ?>" class="btn-action-edit">Edit</a>
+                                                <form class="form-hapus" method="POST" action="hapus.php" style="display: inline-block;">
+                                                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($p['id']); ?>">
+                                                    <button type="submit" class="btn-action-delete" style="border: none; cursor: pointer;">Hapus</button>
+                                                </form>
+                                            </td>
+                                        <?php endif; ?>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php endif; ?>
