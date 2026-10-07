@@ -30,6 +30,7 @@ unset($_SESSION['flash']);
                 <?php endif; ?>
 
                 <form method="POST" action="proses_register.php">
+                    <?php echo csrf_field(); ?>
                     <div class="form-group">
                         <label for="nama">Nama Lengkap Petugas *</label>
                         <input type="text" id="nama" name="nama" class="form-control" placeholder="Contoh: Jesyca Alice" required>

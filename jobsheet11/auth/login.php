@@ -30,6 +30,7 @@ unset($_SESSION['flash']);
                 <?php endif; ?>
 
                 <form method="POST" action="proses_login.php">
+                    <?php echo csrf_field(); ?>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" class="form-control" placeholder="Masukkan username..." required autocomplete="username">

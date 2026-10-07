@@ -23,6 +23,7 @@ $daftarPasien = $pdo->query("SELECT * FROM pasien ORDER BY id ASC")->fetchAll(PD
                 <?php endif; ?>
 
                 <form action="proses_tambah.php" method="POST">
+                    <?php echo csrf_field(); ?>
                     <div class="form-group">
                         <label for="pasien">Pilih Pasien *</label>
                         <select id="pasien" name="pasien" class="form-control" required>
