@@ -53,8 +53,8 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                 </div>
 
                 <?php if ($flash): ?>
-                    <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
-                        <?php echo htmlspecialchars($flash['pesan']); ?>
+                    <div class="flash flash-<?php echo e($flash['type']); ?>">
+                        <?php echo e($flash['pesan']); ?>
                     </div>
                 <?php endif; ?>
 
@@ -69,7 +69,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                     <!-- Formulir Pencarian Server-Side -->
                     <div class="search-box">
                         <form method="GET" action="list.php" style="display: flex; gap: 6px; align-items: center;">
-                            <input type="text" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Cari hewan, pemilik, no pasien..." class="form-control" style="width: 260px; padding: 7px 12px; font-size: 13px;">
+                            <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Cari hewan, pemilik, no pasien..." class="form-control" style="width: 260px; padding: 7px 12px; font-size: 13px;">
                             <button type="submit" class="btn btn-primary btn-sm">Cari</button>
                             <?php if ($keyword !== ''): ?>
                                 <a href="list.php" class="btn btn-secondary btn-sm">Reset</a>
@@ -99,7 +99,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <tr>
                                     <td colspan="<?php echo $sudahLogin ? 7 : 6; ?>" style="text-align: center; color: #846F65; padding: 24px;">
                                         <?php if ($keyword !== ''): ?>
-                                            Tidak ditemukan data pasien dengan kata kunci "<strong><?php echo htmlspecialchars($keyword); ?></strong>".
+                                            Tidak ditemukan data pasien dengan kata kunci "<strong><?php echo e($keyword); ?></strong>".
                                         <?php else: ?>
                                             Belum ada data pasien di database.
                                         <?php endif; ?>
@@ -116,18 +116,18 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                     }
                                     ?>
                                     <tr>
-                                        <td><strong><?php echo htmlspecialchars($p['no_pasien']); ?></strong></td>
-                                        <td><?php echo htmlspecialchars($p['nama_hewan']); ?></td>
-                                        <td><span class="badge-pill <?php echo $badgeClass; ?>"><?php echo htmlspecialchars($p['spesies']); ?></span></td>
-                                        <td><?php echo htmlspecialchars($p['ras']); ?></td>
-                                        <td><?php echo htmlspecialchars($p['nama_pemilik']); ?></td>
-                                        <td><?php echo htmlspecialchars($p['no_hp']); ?></td>
-                                        <!-- Tombol Edit dan Hapus hanya tampil jika petugas sudah login -->
+                                        <td><strong><?php echo e($p['no_pasien']); ?></strong></td>
+                                        <td><?php echo e($p['nama_hewan']); ?></td>
+                                        <td><span class="badge-pill <?php echo $badgeClass; ?>"><?php echo e($p['spesies']); ?></span></td>
+                                        <td><?php echo e($p['ras']); ?></td>
+                                        <td><?php echo e($p['nama_pemilik']); ?></td>
+                                        <td><?php echo e($p['no_hp']); ?></td>
+                                        <!-- Kolom Aksi hanya tampil jika petugas sudah login -->
                                         <?php if ($sudahLogin): ?>
                                             <td style="text-align: center; white-space: nowrap;">
-                                                <a href="edit.php?id=<?php echo htmlspecialchars($p['id']); ?>" class="btn-action-edit">Edit</a>
+                                                <a href="edit.php?id=<?php echo e($p['id']); ?>" class="btn-action-edit">Edit</a>
                                                 <form class="form-hapus" method="POST" action="hapus.php" style="display: inline-block;">
-                                                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($p['id']); ?>">
+                                                    <input type="hidden" name="id" value="<?php echo e($p['id']); ?>">
                                                     <button type="submit" class="btn-action-delete" style="border: none; cursor: pointer;">Hapus</button>
                                                 </form>
                                             </td>

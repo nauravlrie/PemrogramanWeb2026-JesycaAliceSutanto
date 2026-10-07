@@ -29,7 +29,8 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
         <div class="header-meta">
             <?php if ($sudahLogin): ?>
                 <span class="meta-label">Petugas Aktif</span>
-                <span class="meta-value" style="font-weight: 600; color: #FAF6F2;"><?php echo htmlspecialchars($_SESSION['nama']); ?></span>
+                <span class="meta-value" style="font-weight: 600; color: #FAF6F2;"><?php echo 
+            e($_SESSION['nama']); ?></span>
             <?php else: ?>
                 <span class="meta-label">Jam Operasional</span>
                 <span class="meta-value">Senin - Minggu: 08.00 - 21.00 WIB</span>
