@@ -1,0 +1,65 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+require __DIR__ . '/../includes/csrf.php';
+require __DIR__ . '/../includes/koneksi.php';
+
+csrf_verify();
+
+$nama = trim($_POST['nama'] ?? '');
+$username = trim($_POST['username'] ?? '');
+$password = $_POST['password'] ?? '';
+
+$errors = [];
+if ($nama === '') {
+    $errors[] = "Nama lengkap wajib diisi.";
+}
+if ($username === '') {
+    $errors[] = "Username wajib diisi.";
+}
+if (strlen($password) < 6) {
+    $errors[] = "Password minimal 6 karakter.";
+}
+
+// Jika ada input yang tidak valid
+if (!empty($errors)) {
+    $_SESSION['flash'] = [
+        'type' => 'error',
+        'pesan' => implode(' ', $errors)
+    ];
+    header('Location: register.php');
+    exit;
+}
+
+// Memeriksa apakah username sudah pernah digunakan
+$cek = $pdo->prepare("SELECT id FROM users WHERE username = :username");
+$cek->execute(['username' => $username]);
+if ($cek->fetch()) {
+    $_SESSION['flash'] = [
+        'type' => 'error',
+        'pesan' => 'Username sudah digunakan oleh petugas lain.'
+    ];
+    header('Location: register.php');
+    exit;
+}
+
+// Menyimpan petugas baru ke database dengan password ter-hash
+$stmt = $pdo->prepare(
+    "INSERT INTO users (nama, username, password, role) 
+     VALUES (:nama, :username, :password, 'petugas')"
+);
+
+$stmt->execute([
+    'nama'     => $nama,
+    'username' => $username,
+    'password' => password_hash($password, PASSWORD_DEFAULT),
+]);
+
+$_SESSION['flash'] = [
+    'type' => 'success',
+    'pesan' => 'Registrasi petugas berhasil! Silakan login dengan akun barumu.'
+];
+
+header('Location: login.php');
+exit;
