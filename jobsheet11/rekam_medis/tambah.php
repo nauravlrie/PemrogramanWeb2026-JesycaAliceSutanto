@@ -17,8 +17,8 @@ $daftarPasien = $pdo->query("SELECT * FROM pasien ORDER BY id ASC")->fetchAll(PD
                 <p>Catat hasil diagnosa dan tindakan medis pasien anabul ke dalam database.</p>
 
                 <?php if ($flash): ?>
-                    <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
-                        <?php echo htmlspecialchars($flash['pesan']); ?>
+                    <div class="flash flash-<?php echo e($flash['type']); ?>">
+                        <?php echo e($flash['pesan']); ?>
                     </div>
                 <?php endif; ?>
 
@@ -31,8 +31,8 @@ $daftarPasien = $pdo->query("SELECT * FROM pasien ORDER BY id ASC")->fetchAll(PD
                                 <option value="" disabled>Belum ada data pasien di database</option>
                             <?php else: ?>
                                 <?php foreach ($daftarPasien as $p): ?>
-                                    <option value="<?php echo htmlspecialchars($p['nama_hewan'] . ' (' . $p['spesies'] . ')'); ?>">
-                                        <?php echo htmlspecialchars($p['no_pasien'] . ' - ' . $p['nama_hewan'] . ' (' . $p['spesies'] . ')'); ?>
+                                    <option value="<?php echo e($p['nama_hewan'] . ' (' . $p['spesies'] . ')'); ?>">
+                                        <?php echo e($p['no_pasien'] . ' - ' . $p['nama_hewan'] . ' (' . $p['spesies'] . ')'); ?>
                                     </option>
                                 <?php endforeach; ?>
                             <?php endif; ?>

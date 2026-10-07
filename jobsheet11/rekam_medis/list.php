@@ -55,8 +55,8 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                 </div>
 
                 <?php if ($flash): ?>
-                    <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
-                        <?php echo htmlspecialchars($flash['pesan']); ?>
+                    <div class="flash flash-<?php echo e($flash['type']); ?>">
+                        <?php echo e($flash['pesan']); ?>
                     </div>
                 <?php endif; ?>
 
@@ -68,7 +68,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                     <!-- Formulir Pencarian Server-Side -->
                     <div class="search-box">
                         <form method="GET" action="list.php" style="display: flex; gap: 6px; align-items: center;">
-                            <input type="text" id="search-input" name="q" value="<?php echo htmlspecialchars($keyword); ?>" placeholder="Cari no RM, pasien, dokter, diagnosa..." class="form-control" style="width: 270px; padding: 7px 12px; font-size: 13px;">
+                            <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Cari no RM, pasien, dokter, diagnosa..." class="form-control" style="width: 270px; padding: 7px 12px; font-size: 13px;">
                             <button type="submit" class="btn btn-primary btn-sm">Cari</button>
                             <?php if ($keyword !== ''): ?>
                                 <a href="list.php" class="btn btn-secondary btn-sm">Reset</a>
@@ -94,7 +94,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                                 <tr>
                                     <td colspan="6" style="text-align: center; color: #846F65; padding: 24px;">
                                         <?php if ($keyword !== ''): ?>
-                                            Tidak ditemukan rekam medis dengan kata kunci "<strong><?php echo htmlspecialchars($keyword); ?></strong>".
+                                            Tidak ditemukan rekam medis dengan kata kunci "<strong><?php echo e($keyword); ?></strong>".
                                         <?php else: ?>
                                             Belum ada riwayat rekam medis di database. Silakan klik tombol <strong>+ Tambah Rekam Medis</strong> di atas.
                                         <?php endif; ?>
@@ -103,15 +103,15 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                             <?php else: ?>
                                 <?php foreach ($daftarRM as $rm): ?>
                                     <tr>
-                                        <td><strong><?php echo htmlspecialchars($rm['no_rm']); ?></strong></td>
-                                        <td><?php echo htmlspecialchars($rm['pasien']); ?></td>
-                                        <td><?php echo htmlspecialchars(date('d M Y', strtotime($rm['tanggal']))); ?></td>
-                                        <td><?php echo htmlspecialchars($rm['diagnosa']); ?></td>
-                                        <td><?php echo htmlspecialchars($rm['dokter']); ?></td>
+                                        <td><strong><?php echo e($rm['no_rm']); ?></strong></td>
+                                        <td><?php echo e($rm['pasien']); ?></td>
+                                        <td><?php echo e(date('d M Y', strtotime($rm['tanggal']))); ?></td>
+                                        <td><?php echo e($rm['diagnosa']); ?></td>
+                                        <td><?php echo e($rm['dokter']); ?></td>
                                         <td style="text-align: center; white-space: nowrap;">
-                                            <a href="edit.php?id=<?php echo htmlspecialchars($rm['id']); ?>" class="btn-action-edit">Edit</a>
+                                            <a href="edit.php?id=<?php echo e($rm['id']); ?>" class="btn-action-edit">Edit</a>
                                             <form class="form-hapus" method="POST" action="hapus.php" style="display: inline-block;">
-                                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($rm['id']); ?>">
+                                                <input type="hidden" name="id" value="<?php echo e($rm['id']); ?>">
                                                 <button type="submit" class="btn-action-delete" style="border: none; cursor: pointer;">Hapus</button>
                                             </form>
                                         </td>

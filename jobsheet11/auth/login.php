@@ -24,8 +24,8 @@ unset($_SESSION['flash']);
                 </div>
 
                 <?php if ($flash): ?>
-                    <div class="flash flash-<?php echo htmlspecialchars($flash['type']); ?>">
-                        <?php echo htmlspecialchars($flash['pesan']); ?>
+                    <div class="flash flash-<?php echo e($flash['type']); ?>">
+                        <?php echo e($flash['pesan']); ?>
                     </div>
                 <?php endif; ?>
 
