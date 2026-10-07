@@ -20,6 +20,7 @@ unset($_SESSION['flash']);
                 <?php endif; ?>
 
                 <form action="proses_tambah.php" method="POST">
+                    <?php echo csrf_field(); ?>
                     <div class="form-group">
                         <label for="nama_hewan">Nama Hewan *</label>
                         <input type="text" id="nama_hewan" name="nama_hewan" class="form-control" placeholder="Masukkan nama hewan..." required>

@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/../includes/auth.php';
+require __DIR__ . '/../includes/csrf.php';
 require __DIR__ . '/../includes/koneksi.php';
+
+csrf_verify();
 
 $nama_hewan = trim($_POST['nama_hewan'] ?? '');
 $spesies = trim($_POST['spesies'] ?? '');

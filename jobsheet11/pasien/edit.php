@@ -42,6 +42,7 @@ if (!$pasien) {
                 <?php endif; ?>
 
                 <form action="proses_edit.php" method="POST">
+                    <?php echo csrf_field(); ?>
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($pasien['id']); ?>">
 
                     <div class="form-group">
