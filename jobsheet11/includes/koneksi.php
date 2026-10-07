@@ -1,13 +1,17 @@
 <?php
-// Kredensial Database Cloud Supabase (PostgreSQL)
-$host = getenv('DB_HOST') ?: "aws-0-ap-northeast-1.pooler.supabase.com";
+// Konfigurasi Database Fleksibel (Lokal & Cloud Vercel)
+$host = getenv('DB_HOST') ?: "localhost";
 $port = getenv('DB_PORT') ?: "5432";
-$db   = getenv('DB_NAME') ?: "postgres";
-$user = getenv('DB_USER') ?: "postgres.kglqmrgbxumkcsxgfdzh";
-$pass = getenv('DB_PASS') ?: "KATA_SANDI_SUPABASE_TOHRU";
+$db   = getenv('DB_NAME') ?: "pawcare_mini";
+$user = getenv('DB_USER') ?: "postgres";
+$pass = getenv('DB_PASS') ?: "bittersweet07";
 
 try {
-    $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;sslmode=require", $user, $pass);
+    $dsn = "pgsql:host=$host;port=$port;dbname=$db";
+    if (getenv('DB_HOST')) {
+        $dsn .= ";sslmode=require";
+    }
+    $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Koneksi database gagal: " . $e->getMessage());
