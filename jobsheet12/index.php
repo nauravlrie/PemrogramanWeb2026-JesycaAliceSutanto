@@ -6,6 +6,7 @@ require __DIR__ . '/includes/koneksi.php';
 
 $totalPasien = (int) $pdo->query("SELECT count(*) FROM pasien")->fetchColumn();
 $totalRekamMedis = (int) $pdo->query("SELECT count(*) FROM rekam_medis")->fetchColumn();
+$totalRawatInap = (int) $pdo->query("SELECT count(*) FROM rawat_inap WHERE status = 'dirawat'")->fetchColumn();
 ?>
 
 
@@ -34,7 +35,7 @@ $totalRekamMedis = (int) $pdo->query("SELECT count(*) FROM rekam_medis")->fetchC
                 </div>
                 <div class="kartu-stat">
                     <h3>Pasien Rawat Inap</h3>
-                    <p class="angka">1</p>
+                    <p class="angka"><?php echo $totalRawatInap; ?></p>
                 </div>
             </div>
         </section>

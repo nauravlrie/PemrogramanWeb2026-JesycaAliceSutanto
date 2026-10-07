@@ -50,6 +50,9 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
                 <a href="<?php echo $base; ?>pasien/tambah.php">Tambah Pasien</a>
                 <a href="<?php echo $base; ?>rekam_medis/list.php">Rekam Medis</a>
                 <a href="<?php echo $base; ?>rekam_medis/tambah.php">Tambah Rekam Medis</a>
+                <a href="<?php echo $base; ?>rawat_inap/kembali.php">Rawat Inap</a>
+                <a href="<?php echo $base; ?>rawat_inap/tambah.php">Check-in</a>
+                <a href="<?php echo $base; ?>rawat_inap/riwayat.php">Riwayat Rawat</a>
                 <a href="<?php echo $base; ?>auth/logout.php" style="background-color: #8C2A3A; color: #ffffff; margin-left: 6px;">Logout</a>
             <?php else: ?>
                 <a href="<?php echo $base; ?>auth/login.php" style="background-color: #8B6A5B; color: #ffffff; margin-left: 6px;">Login Petugas</a>
